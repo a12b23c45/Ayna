@@ -3,7 +3,12 @@
 This project implements a **UNet model from scratch in PyTorch** to colorize polygon images based on a given color name (as a one-hot or RGB vector). The model learns to fill polygon regions in an RGBA image conditioned on a specific color label.
 
 ---
+## File Structure while implementing in collab
 
+-- Drive/Mydrive/dataset/Training....
+--drive/ Mydrive/dataset/Validation/...
+
+---
 ##  Architecture
 
 - Custom-built **UNet from scratch**

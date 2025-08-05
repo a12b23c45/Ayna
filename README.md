@@ -15,3 +15,25 @@ This project implements a **UNet model from scratch in PyTorch** to colorize pol
 class UNet(nn.Module):
     def __init__(self, in_ch=4, out_ch=4, color_embedding_dim=128, color_input_dim=9):
         ...
+---
+## Hyperparameters
+Hyperparameter	Value 
+Image Size	192×192
+Batch Size	32
+Learning Rate	1e-4
+Optimizer	Adam
+Loss Function	0.7 * L1 + 0.3 * MSE
+Conditioning Input	One-hot colour name or RGB (dim = 9)
+Epochs	80 (No overfitting or Underfitting)
+---
+## Training Dynamics:
+The model was trained using both L1 loss and MSE loss to ensure sharp yet consistent outputs.
+•	Training Loss decreased steadily.
+•	PSNR improved during early epochs, then plateaued.
+---
+## Key Learnings:
+1)	Fi LM conditioning is very effective when used across all Convolution Blocks.
+2)	Group Norm + Si LU works well with small batch sizes.
+3)	Learned that U Net performs better than CNN.
+4)	Tracking via Weights & Biases was critical for debugging but graphs helped to check if model was trained correctly.
+---
